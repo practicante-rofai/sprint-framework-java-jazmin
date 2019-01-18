@@ -1,0 +1,11 @@
+com\registro_notas\repository\read\AlumnoRRepository.class
+com\registro_notas\service\read\impl\AlumnoRServiceImpl.class
+com\registro_notas\controller\AdministrationController.class
+com\registro_notas\repository\write\impl\AlumnoWRepositoryImpl.class
+com\registro_notas\repository\read\impl\AlumnoRRepositoryImpl.class
+com\registro_notas\App.class
+com\registro_notas\repository\write\AlumnoWRepository.class
+com\registro_notas\service\read\AlumnoRService.class
+com\registro_notas\service\write\impl\AlumnoWServiceImpl.class
+com\registro_notas\domain\Alumno.class
+com\registro_notas\service\write\AlumnoWService.class
