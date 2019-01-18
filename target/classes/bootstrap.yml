@@ -16,7 +16,7 @@ spring:
     platform: postgres
     continue-on-error: true
     driverClassName: org.postgresql.Driver
-    url: postgres://ikszpznl:NpYExP6uLdRbzTRzd5CHMf7hThdZPV4E@elmer.db.elephantsql.com:5432/ikszpznl
+    url: jdbc:postgresql://ikszpznl:NpYExP6uLdRbzTRzd5CHMf7hThdZPV4E@elmer.db.elephantsql.com:5432/ikszpznl
     username: ikszpznl
     password: NpYExP6uLdRbzTRzd5CHMf7hThdZPV4E
     initialize: true
