@@ -16,8 +16,8 @@ public class AlumnoRServiceImpl implements AlumnoRService{
     private AlumnoRRepository alumnoRRepository;
 
     @Override
-    public Alumno getAlumno(UUID ui_idalumno) {
-        return alumnoRRepository.getAlumno(ui_idalumno);
+    public Alumno getAlumno(UUID id_alumno) {
+        return alumnoRRepository.getAlumno(id_alumno);
     }
 
     @Override

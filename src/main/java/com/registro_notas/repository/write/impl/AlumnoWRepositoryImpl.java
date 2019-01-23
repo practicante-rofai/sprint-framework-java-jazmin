@@ -23,15 +23,15 @@ public class AlumnoWRepositoryImpl implements AlumnoWRepository {
     @Transactional(rollbackFor = Exception.class)
     public UUID createAlumno(Alumno alumno) {
         UUID idGenerated = UUID.randomUUID();
-        String sql = "INSERT INTO administration.alumno " + 
-        "(ui_idalumno, vc_nombre, vc_apellido) " + 
-        "VALUES(?, ?, ?)";
+        String sql = "INSERT INTO registro_notas.alumno " + 
+        "(id_alumno, nombre, apellido, estado) " + 
+        "VALUES(?, ?, ?, true)";
 
         try {
             jdbcTemplate.update(sql, new Object[] { 
                 idGenerated, 
-                alumno.getVc_nombre(), 
-                alumno.getVc_apellido() 
+                alumno.getNombre(), 
+                alumno.getApellido(),
             });
             return null;
         } catch (Exception e) {
@@ -43,19 +43,36 @@ public class AlumnoWRepositoryImpl implements AlumnoWRepository {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean updateAlumno(Alumno alumno) {
-        String SQL = "UPDATE administration.user "+
-                    "SET vc_name = ?, vc_surname = ?" +
-                    "WHERE ui_iduser = ?";
+        String SQL = "UPDATE registro_notas.alumno "+
+                    "SET nombre = ?, apellido = ?, estado = true " +
+                    "WHERE id_alumno = ?";
 		try {
             jdbcTemplate.update(SQL, new Object[] {
-                alumno.getVc_nombre(), 
-                alumno.getVc_apellido(),
-                alumno.getUi_idalumno()
+                alumno.getNombre(), 
+                alumno.getApellido(),
+                alumno.getId_alumno(),
             });
             return true;
 		} catch (Exception e) {
             logger.error("Exception:" + e);
 			return false;
 		}
-    }   
+    }
+
+    @Override
+    public boolean deleteAlumno(Alumno alumno) {
+        String SQL = "UPDATE registro_notas.alumno "+
+                    "SET estado = false "+
+                    "WHERE id_alumno = ?";
+        try {
+            jdbcTemplate.update(SQL, new Object[] {
+                alumno.getId_alumno()
+            });
+            return true;
+            } catch (Exception e) {
+                        logger.error("Exception:" + e);
+            return false;
+            }
+    }
+
 }

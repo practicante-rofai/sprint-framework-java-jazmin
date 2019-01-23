@@ -25,18 +25,19 @@ public class AlumnoRRepositoryImpl implements AlumnoRRepository{
 
     private Alumno mapDataPersona(ResultSet rs, int i) throws SQLException {
         Alumno alumno = new Alumno();
-        alumno.setUi_idalumno(UUID.fromString(rs.getString("ui_idalumno")));
-        alumno.setVc_nombre(rs.getString("vc_nombre"));
-        alumno.setVc_apellido(rs.getString("vc_apellido"));
+        alumno.setId_alumno(UUID.fromString(rs.getString("id_alumno")));
+        alumno.setNombre(rs.getString("nombre"));
+        alumno.setApellido(rs.getString("apellido"));
+        alumno.setEstado(rs.getBoolean("estado"));
         return alumno;
     }
 
     @Override
-    public Alumno getAlumno(UUID ui_idalumno) {
+    public Alumno getAlumno(UUID id_alumno) {
         Alumno alumno = new Alumno();
-        String sql = "SELECT id_alumno, nombre, apellido FROM administration.alumno WHERE ui_idalumno = ?";
+        String sql = "SELECT id_alumno, nombre, apellido, estado FROM registro_notas.alumno WHERE (id_alumno = ?) AND (estado = true)";
         try {
-            alumno = jdbcTemplate.queryForObject(sql, new Object[] { ui_idalumno }, this::mapDataPersona);
+            alumno = jdbcTemplate.queryForObject(sql, new Object[] { id_alumno }, this::mapDataPersona);
 
         } catch (Exception e) {
             logger.error("SQLException: ", e);
@@ -47,7 +48,7 @@ public class AlumnoRRepositoryImpl implements AlumnoRRepository{
     @Override
     public List<Alumno> getAlumnos() {
         List<Alumno> listAlumno = null;
-        String sql = "SELECT id_alumno, nombre, apellido FROM administration.alumno";
+        String sql = "SELECT id_alumno, nombre, apellido, estado FROM registro_notas.alumno WHERE estado = true";
         try {
             listAlumno = jdbcTemplate.query(sql, new Object[] {}, this::mapDataPersona);
         } catch (EmptyResultDataAccessException e) {

@@ -6,50 +6,68 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Alumno {
 
-    @JsonProperty("idAlumno")
-    private UUID ui_idalumno;
+    @JsonProperty("id_alumno")
+    private UUID id_alumno;
 
-    @JsonProperty("name")
-    private String vc_nombre;
+    @JsonProperty("nombre")
+    private String nombre;
 
-    @JsonProperty("surname")
-    private String vc_apellido;
+    @JsonProperty("apellido")
+    private String apellido;
 
-    /**
-     * @return the ui_idalumno
-     */
-    public UUID getUi_idalumno() {
-        return ui_idalumno;
+    @JsonProperty("estado")
+    private boolean estado;
+
+   /**
+    * @return the id_alumno
+    */
+   public UUID getId_alumno() {
+       return id_alumno;
+   }
+   /**
+    * @param id_alumno the id_alumno to set
+    */
+   public void setId_alumno(UUID id_alumno) {
+       this.id_alumno = id_alumno;
+   }
+
+   /**
+    * @return the nombre
+    */
+   public String getNombre() {
+       return nombre;
+   }
+   /**
+    * @param nombre the nombre to set
+    */
+   public void setNombre(String nombre) {
+       this.nombre = nombre;
+   }
+
+   /**
+    * @return the apellido
+    */
+   public String getApellido() {
+       return apellido;
+   }
+   /**
+    * @param apellido the apellido to set
+    */
+   public void setApellido(String apellido) {
+       this.apellido = apellido;
+   }
+
+   /**
+    * @return the estado
+    */
+    public boolean getEstado() {
+        return estado;
     }
     /**
-     * @param ui_idalumno the ui_idalumno to set
+     * @param estado the estado to set
      */
-    public void setUi_idalumno(UUID ui_idalumno) {
-        this.ui_idalumno = ui_idalumno;
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
-    /**
-     * @return the vc_nombre
-     */
-    public String getVc_nombre() {
-        return vc_nombre;
-    }
-    /**
-     * @param vc_nombre the vc_nombre to set
-     */
-    public void setVc_nombre(String vc_nombre) {
-        this.vc_nombre = vc_nombre;
-    }
-    /**
-     * @return the vc_apellido
-     */
-    public String getVc_apellido() {
-        return vc_apellido;
-    }
-    /**
-     * @param vc_apellido the vc_apellido to set
-     */
-    public void setVc_apellido(String vc_apellido) {
-        this.vc_apellido = vc_apellido;
-    }
 }

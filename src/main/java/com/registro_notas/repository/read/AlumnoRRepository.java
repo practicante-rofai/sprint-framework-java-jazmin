@@ -7,6 +7,6 @@ import java.util.UUID;
 import com.registro_notas.domain.Alumno;
 
 public interface AlumnoRRepository{
-    Alumno getAlumno(UUID ui_idalumno);
+    Alumno getAlumno(UUID id_alumno);
     List<Alumno> getAlumnos();
 }
