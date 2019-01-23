@@ -25,7 +25,7 @@ public class AlumnoWRepositoryImpl implements AlumnoWRepository {
         UUID idGenerated = UUID.randomUUID();
         String sql = "INSERT INTO registro_notas.alumno " + 
         "(id_alumno, nombre, apellido, estado) " + 
-        "VALUES(?, ?, ?, true)";
+        "VALUES(?, ?, ?, true)"; 
 
         try {
             jdbcTemplate.update(sql, new Object[] { 
