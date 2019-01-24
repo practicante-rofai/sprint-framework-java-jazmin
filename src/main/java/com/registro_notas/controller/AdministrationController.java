@@ -106,11 +106,11 @@ public class AdministrationController {
 		logger.info("Controller - getAlumno(UUID id_alumno)");
 		logger.info("Input");
 		logger.info("idAlumno: " + idAlumno);
-		Alumno alumno = new Alumno();
 		logger.info("Output");
+		
 		try {
-			alumno = alumnoRService.getAlumno(idAlumno);
-			return alumnoWService.deleteAlumno(alumno);
+			
+			return alumnoWService.deleteAlumno(idAlumno);
 		} catch (Exception e) {
 			logger.error("Exception: ", e);
 			return false;

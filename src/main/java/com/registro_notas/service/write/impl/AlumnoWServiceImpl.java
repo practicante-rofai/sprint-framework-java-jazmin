@@ -25,8 +25,8 @@ public class AlumnoWServiceImpl implements AlumnoWService{
     }
 
     @Override
-    public boolean deleteAlumno(Alumno alumno) {
-        return alumnoWRepository.deleteAlumno(alumno);
+    public boolean deleteAlumno(UUID id_alumno) {
+        return alumnoWRepository.deleteAlumno(id_alumno);
     }
 
 }

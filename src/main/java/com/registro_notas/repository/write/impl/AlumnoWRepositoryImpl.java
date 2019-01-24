@@ -60,14 +60,15 @@ public class AlumnoWRepositoryImpl implements AlumnoWRepository {
     }
 
     @Override
-    public boolean deleteAlumno(Alumno alumno) {
+    public boolean deleteAlumno(UUID id_alumno) {
         String SQL = "UPDATE registro_notas.alumno "+
                     "SET estado = false "+
                     "WHERE id_alumno = ?";
         try {
-            jdbcTemplate.update(SQL, new Object[] {
-                alumno.getId_alumno()
-            });
+            
+           jdbcTemplate.update(SQL, new Object[] {
+            id_alumno
+        });
             return true;
             } catch (Exception e) {
                         logger.error("Exception:" + e);

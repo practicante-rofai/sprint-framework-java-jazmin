@@ -8,5 +8,5 @@ public interface AlumnoWService {
 
     UUID createAlumno(Alumno alumno);
     boolean updateAlumno(Alumno alumno);
-    boolean deleteAlumno(Alumno alumno);
+    boolean deleteAlumno(UUID id_alumno);
 }

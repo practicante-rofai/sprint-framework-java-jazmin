@@ -8,5 +8,5 @@ public interface AlumnoWRepository {
 
     UUID createAlumno(Alumno alumno);
     boolean updateAlumno(Alumno alumno);
-    boolean deleteAlumno(Alumno alumno);
+    boolean deleteAlumno(UUID id_alumno);
 }
