@@ -31,8 +31,7 @@ public class CursoWRepositoryImpl implements CursoWRepository {
 
         try {
             jdbcTemplate.update(sql, new Object[] { 
-                idGenerated, 
-                curso.getUi_id_curso(), 
+                idGenerated,  
                 curso.getVc_nombre(),
             });
             return null;

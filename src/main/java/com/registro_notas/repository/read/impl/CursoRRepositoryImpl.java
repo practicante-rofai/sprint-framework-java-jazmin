@@ -25,7 +25,7 @@ public class CursoRRepositoryImpl implements CursoRRepository {
 
     private Curso mapDataCurso(ResultSet rs, int i) throws SQLException {
         Curso curso = new Curso();
-        curso.setUi_id_curso(UUID.fromString(rs.getString("ui_id_alumno")));
+        curso.setUi_id_curso(UUID.fromString(rs.getString("ui_id_curso")));
         curso.setVc_nombre(rs.getString("vc_nombre"));
         curso.setEstado(rs.getBoolean("estado"));
         return curso;
@@ -34,7 +34,7 @@ public class CursoRRepositoryImpl implements CursoRRepository {
     @Override
     public Curso getCurso(UUID ui_id_curso) {
         Curso curso = new Curso();
-        String sql = "SELECT ui_id_curso, vc_nombre, estado FROM registro_notas.curso WHERE (ui_id_alumno = ?) AND (estado = true)";
+        String sql = "SELECT ui_id_curso, vc_nombre, estado FROM registro_notas.curso WHERE (ui_id_curso = ?) AND (estado = true)";
         try {
             curso = jdbcTemplate.queryForObject(sql, new Object[] { ui_id_curso }, this::mapDataCurso);
 
