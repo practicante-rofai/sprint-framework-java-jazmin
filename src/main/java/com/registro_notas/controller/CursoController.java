@@ -24,16 +24,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/registro_notas")
 public class CursoController {
 
-    @Autowired
-    private CursoRService cursoRService;
+	
+	@Autowired
+	private CursoRService cursoRService;
 
-    @Autowired
-    private CursoWService cursoWService;
+	@Autowired
+	private CursoWService cursoWService;
 
-    private static final Logger logger = LoggerFactory.getLogger(CursoController.class);
-    private static final ObjectMapper mapper = new ObjectMapper();
+	private static final Logger logger = LoggerFactory.getLogger(CursoController.class);
+	private static final ObjectMapper mapper = new ObjectMapper();
 
-    @RequestMapping(value = "/curso/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/curso/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public Curso getCurso(@PathVariable("id") UUID idCurso) {
 		logger.info("Controller - getCurso(UUID ui_id_curso)");
@@ -48,9 +49,9 @@ public class CursoController {
 			logger.error("Exception", e);
 		}
 		return curso;
-    }
-    
-    @RequestMapping(value = "/curso", method = RequestMethod.GET)
+	}
+
+	@RequestMapping(value = "/curso", method = RequestMethod.GET)
 	@ResponseBody
 	public List<Curso> getCursos() {
 		logger.info("Controller - getCursos()");
@@ -115,4 +116,6 @@ public class CursoController {
 			return false;
 		}
 	}
+
+	
 }
