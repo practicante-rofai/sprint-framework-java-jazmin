@@ -19,20 +19,15 @@ public class AlumnoWRepositoryImpl implements AlumnoWRepository {
 
     private static final Logger logger = LoggerFactory.getLogger(AlumnoWRepositoryImpl.class);
 
-    @Override    
+    @Override
     @Transactional(rollbackFor = Exception.class)
     public UUID createAlumno(Alumno alumno) {
         UUID idGenerated = UUID.randomUUID();
-        String sql = "INSERT INTO registro_notas.alumno " + 
-        "(id_alumno, nombre, apellido, estado) " + 
-        "VALUES(?, ?, ?, true)"; 
+        String sql = "INSERT INTO registro_notas.alumno " + "(id_alumno, nombre, apellido, estado) "
+                + "VALUES(?, ?, ?, true)";
 
         try {
-            jdbcTemplate.update(sql, new Object[] { 
-                idGenerated, 
-                alumno.getNombre(), 
-                alumno.getApellido(),
-            });
+            jdbcTemplate.update(sql, new Object[] { idGenerated, alumno.getNombre(), alumno.getApellido(), });
             return null;
         } catch (Exception e) {
             logger.error("Exception:" + e);
@@ -43,37 +38,28 @@ public class AlumnoWRepositoryImpl implements AlumnoWRepository {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean updateAlumno(Alumno alumno) {
-        String SQL = "UPDATE registro_notas.alumno "+
-                    "SET nombre = ?, apellido = ?, estado = true " +
-                    "WHERE id_alumno = ?";
-		try {
-            jdbcTemplate.update(SQL, new Object[] {
-                alumno.getNombre(), 
-                alumno.getApellido(),
-                alumno.getId_alumno(),
-            });
+        String SQL = "UPDATE registro_notas.alumno " + "SET nombre = ?, apellido = ?, estado = true "
+                + "WHERE id_alumno = ?";
+        try {
+            jdbcTemplate.update(SQL, new Object[] { alumno.getNombre(), alumno.getApellido(), alumno.getId_alumno(), });
             return true;
-		} catch (Exception e) {
+        } catch (Exception e) {
             logger.error("Exception:" + e);
-			return false;
-		}
+            return false;
+        }
     }
 
     @Override
     public boolean deleteAlumno(UUID id_alumno) {
-        String SQL = "UPDATE registro_notas.alumno "+
-                    "SET estado = false "+
-                    "WHERE id_alumno = ?";
+        String SQL = "UPDATE registro_notas.alumno " + "SET estado = false " + "WHERE id_alumno = ?";
         try {
-            
-           jdbcTemplate.update(SQL, new Object[] {
-            id_alumno
-        });
+
+            jdbcTemplate.update(SQL, new Object[] { id_alumno });
             return true;
-            } catch (Exception e) {
-                        logger.error("Exception:" + e);
+        } catch (Exception e) {
+            logger.error("Exception:" + e);
             return false;
-            }
+        }
     }
 
 }

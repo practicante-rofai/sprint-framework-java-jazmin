@@ -109,7 +109,6 @@ public class AdministrationController {
 		logger.info("Output");
 		
 		try {
-			
 			return alumnoWService.deleteAlumno(idAlumno);
 		} catch (Exception e) {
 			logger.error("Exception: ", e);
