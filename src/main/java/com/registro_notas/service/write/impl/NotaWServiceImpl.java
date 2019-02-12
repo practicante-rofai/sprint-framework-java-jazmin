@@ -7,7 +7,9 @@ import com.registro_notas.repository.write.NotaWRepository;
 import com.registro_notas.service.write.NotaWService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class NotaWServiceImpl implements NotaWService {
 
     @Autowired

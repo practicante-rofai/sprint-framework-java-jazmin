@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @CrossOrigin(origins ="*")
 @Component
-@RequestMapping("/registro_notas")
+@RequestMapping("/registro_notas_nota")
 
 public class NotaController {
 

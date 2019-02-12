@@ -13,7 +13,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
 
+@Service
 public class NotaRRepositoryImpl implements NotaRRepository {
 
     @Autowired
@@ -46,7 +48,7 @@ public class NotaRRepositoryImpl implements NotaRRepository {
     @Override
     public List<Nota> getNotas() {
         List<Nota> listNota = null;
-        String sql = "SELECT ui_id_nota, ui_id_curso, id_alumno, nr_nota registro_notas.notas";
+        String sql = "SELECT ui_id_nota, ui_id_curso, id_alumno, nr_nota FROM registro_notas.notas";
         try {
             listNota = jdbcTemplate.query(sql, new Object[] {}, this::mapDataNota);
         } catch (EmptyResultDataAccessException e) {

@@ -5,12 +5,13 @@ import java.util.UUID;
 
 import com.registro_notas.domain.Curso;
 import com.registro_notas.repository.read.CursoRRepository;
+import com.registro_notas.service.read.CursoRService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CursoRServiceImpl implements CursoRRepository {
+public class CursoRServiceImpl implements CursoRService {
 
     @Autowired
     private CursoRRepository cursoRRepository;
@@ -24,6 +25,5 @@ public class CursoRServiceImpl implements CursoRRepository {
     public List<Curso> getCursos() {
         return cursoRRepository.getCursos();
     }
-
     
 }

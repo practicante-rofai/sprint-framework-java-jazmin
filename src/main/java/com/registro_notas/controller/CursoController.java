@@ -19,19 +19,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@CrossOrigin(origins = "*")
+
+@CrossOrigin(origins="*")
 @Component
-@RequestMapping("/registro_notas")
+@RequestMapping("/registro_notas_curso")
 public class CursoController {
 
-	
-	@Autowired
-	private CursoRService cursoRService;
+    @Autowired
+    private CursoRService cursoRService;
 
-	@Autowired
-	private CursoWService cursoWService;
+    @Autowired
+    private CursoWService cursoWService;
 
-	private static final Logger logger = LoggerFactory.getLogger(CursoController.class);
+    private static final Logger logger = LoggerFactory.getLogger(CursoController.class);
 	private static final ObjectMapper mapper = new ObjectMapper();
 
 	@RequestMapping(value = "/curso/{id}", method = RequestMethod.GET)
@@ -116,6 +116,4 @@ public class CursoController {
 			return false;
 		}
 	}
-
-	
 }

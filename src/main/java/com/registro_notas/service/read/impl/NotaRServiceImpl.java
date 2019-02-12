@@ -8,7 +8,9 @@ import com.registro_notas.repository.read.NotaRRepository;
 import com.registro_notas.service.read.NotaRService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class NotaRServiceImpl implements NotaRService {
 
     @Autowired
