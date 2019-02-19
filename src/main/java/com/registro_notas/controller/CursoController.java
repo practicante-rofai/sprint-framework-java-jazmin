@@ -104,7 +104,7 @@ public class CursoController {
 	@RequestMapping(value = "/curso/{id}", method = RequestMethod.DELETE)
 	@ResponseBody
 	public boolean deleteCurso(@PathVariable("id") UUID idCurso) {
-		logger.info("Controller - getCurso(UUID id_curso)");
+		logger.info("Controller - getCurso(UUID ui_id_curso)");
 		logger.info("Input");
 		logger.info("idCurso: " + idCurso);
 		logger.info("Output");

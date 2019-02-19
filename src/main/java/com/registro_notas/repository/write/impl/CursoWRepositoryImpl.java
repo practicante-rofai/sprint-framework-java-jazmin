@@ -61,7 +61,7 @@ public class CursoWRepositoryImpl implements CursoWRepository {
 
     @Override
     public boolean deleteCurso(UUID ui_id_curso) {
-        String SQL = "UPDATE registro_notas.curso" + "SET estado = false " + "WHERE ui_id_curso = ?";
+        String SQL = "UPDATE registro_notas.curso " + "SET estado = false " + "WHERE ui_id_curso = ?";
         try {
 
             jdbcTemplate.update(SQL, new Object[] { ui_id_curso });

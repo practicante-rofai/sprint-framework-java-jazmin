@@ -3,7 +3,7 @@ application:
     
 server:
  context-path: /registro_notas/v1
- port: 8080
+ port: 8081
  compression:
   enabled: true
   mime-types:
