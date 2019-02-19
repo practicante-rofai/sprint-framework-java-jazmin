@@ -15,6 +15,9 @@ public class DetalleNCA {
     @JsonProperty("nombre")
     private String nombre;
 
+    @JsonProperty("apellido")
+    private String apellido;
+
     @JsonProperty("nr_nota")
     private Number nr_nota;
 
@@ -58,6 +61,20 @@ public class DetalleNCA {
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    /**
+     * @return the apellido
+     */
+    public String getApellido() {
+        return apellido;
+    }
+
+    /**
+     * @param apellido the apellido to set
+     */
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     /**

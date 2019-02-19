@@ -28,6 +28,7 @@ public class DetalleNCARRepositoryImpl implements DetalleNCARRepository {
         detalle_nca.setUi_id_nota(UUID.fromString(rs.getString("ui_id_nota")));
         detalle_nca.setVc_nombre(rs.getString("vc_nombre"));;
         detalle_nca.setNombre(rs.getString("nombre"));
+        detalle_nca.setApellido(rs.getString("apellido"));
         detalle_nca.setNr_nota(rs.getDouble("nr_nota"));
         return detalle_nca;
     }
@@ -35,7 +36,7 @@ public class DetalleNCARRepositoryImpl implements DetalleNCARRepository {
     @Override
     public DetalleNCA getDetalleNCA(UUID ui_id_nota) {
         DetalleNCA detalle_nca = new DetalleNCA();
-        String sql = "SELECT n.ui_id_nota, c.vc_nombre, a.nombre, n.nr_nota FROM notas n JOIN curso c ON  n.ui_id_curso = c.ui_id_curso JOIN alumno a ON n.id_alumno = a.id_alumno WHERE n.ui_id_nota = ?";
+        String sql = "SELECT n.ui_id_nota, c.vc_nombre, a.nombre, a.apellido, n.nr_nota FROM registro_notas.notas n JOIN registro_notas.curso c ON  n.ui_id_curso = c.ui_id_curso JOIN registro_notas.alumno a ON n.id_alumno = a.id_alumno WHERE n.ui_id_nota = ?";
         try {
             detalle_nca = jdbcTemplate.queryForObject(sql, new Object[] { ui_id_nota }, this::mapDataDetalle);
 
@@ -48,7 +49,7 @@ public class DetalleNCARRepositoryImpl implements DetalleNCARRepository {
     @Override
     public List<DetalleNCA> getDetallesNCA() {
         List<DetalleNCA> listDetallesNCA = null;
-        String sql = "SELECT n.ui_id_nota, c.vc_nombre, a.nombre, n.nr_nota FROM notas n JOIN curso c ON  n.ui_id_curso = c.ui_id_curso JOIN alumno a ON n.id_alumno = a.id_alumno";
+        String sql = "SELECT n.ui_id_nota, c.vc_nombre, a.nombre, a.apellido, n.nr_nota FROM registro_notas.notas n JOIN registro_notas.curso c ON  n.ui_id_curso = c.ui_id_curso JOIN registro_notas.alumno a ON n.id_alumno = a.id_alumno";
         try {
             listDetallesNCA = jdbcTemplate.query(sql, new Object[] {}, this::mapDataDetalle);
         } catch (EmptyResultDataAccessException e) {

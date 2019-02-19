@@ -24,7 +24,7 @@ public class NotaWRepositoryImpl implements NotaWRepository {
     @Transactional(rollbackFor = Exception.class)
     public UUID createNota(Nota nota) {
         UUID idGenerated = UUID.randomUUID();
-        String sql = "INSERT INTO registro_notas.notas " + "(ui_id_nota, ui_id_nota, id_alumno, nr_nota) "
+        String sql = "INSERT INTO registro_notas.notas " + "(ui_id_nota, ui_id_curso, id_alumno, nr_nota) "
                 + "VALUES(?, ?, ?, ?)";
 
         try {
