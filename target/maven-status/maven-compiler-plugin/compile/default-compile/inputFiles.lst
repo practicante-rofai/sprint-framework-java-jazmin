@@ -2,6 +2,7 @@ C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\r
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\service\read\impl\NotaRServiceImpl.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\write\impl\CursoWRepositoryImpl.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\domain\Curso.java
+C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\controller\DetalleNCAController.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\service\write\NotaWService.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\read\impl\NotaRRepositoryImpl.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\controller\AdministrationController.java
@@ -11,13 +12,16 @@ C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\service\read
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\service\write\AlumnoWService.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\read\AlumnoRRepository.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\write\NotaWRepository.java
+C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\read\impl\DetalleNCARRepositoryImpl.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\service\read\impl\CursoRServiceImpl.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\controller\NotaController.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\read\CursoRRepository.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\service\write\impl\CursoWServiceImpl.java
+C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\service\read\DetalleNCARService.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\service\read\impl\AlumnoRServiceImpl.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\read\NotaRRepository.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\write\CursoWRepository.java
+C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\service\read\impl\DetalleNCARServiceImpl.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\read\impl\CursoRRepositoryImpl.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\service\read\AlumnoRService.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\service\write\impl\AlumnoWServiceImpl.java
@@ -25,6 +29,8 @@ C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\w
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\controller\CursoController.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\domain\Alumno.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\write\impl\NotaWRepositoryImpl.java
+C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\domain\DetalleNCA.java
+C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\read\DetalleNCARRepository.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\App.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\repository\write\AlumnoWRepository.java
 C:\Users\JAZMIN\com.registro_notas\src\main\java\com\registro_notas\service\write\CursoWService.java
